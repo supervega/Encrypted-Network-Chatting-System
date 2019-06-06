@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C5850A3C-CDB1-4C61-9640-4AFABD9BE9CC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Messenger_Client</RootNamespace>
+    <AssemblyName>Messenger_Client</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.5.0.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cipher\AsymmetricCipher.cs" />
+    <Compile Include="Cipher\CAST5.cs" />
+    <Compile Include="Cipher\CAST5CryptoServiceProvider.cs" />
+    <Compile Include="Cipher\CipherMode.cs" />
+    <Compile Include="Cipher\CryptoTools.cs" />
+    <Compile Include="Cipher\DES.cs" />
+    <Compile Include="Cipher\DESCryptoServiceProvider.cs" />
+    <Compile Include="Cipher\DSA.cs" />
+    <Compile Include="Cipher\ElGamal.cs" />
+    <Compile Include="Cipher\ICryptoTransform.cs" />
+    <Compile Include="Cipher\KeySizes.cs" />
+    <Compile Include="Cipher\Math\BigInteger.cs" />
+    <Compile Include="Cipher\Math\Prime\ConfidenceFactor.cs" />
+    <Compile Include="Cipher\Math\Prime\Generator\NextPrimeFinder.cs" />
+    <Compile Include="Cipher\Math\Prime\Generator\PrimeGeneratorBase.cs" />
+    <Compile Include="Cipher\Math\Prime\Generator\SequentialSearchPrimeGeneratorBase.cs" />
+    <Compile Include="Cipher\Math\Prime\PrimalityTests.cs" />
+    <Compile Include="Cipher\PaddingMode.cs" />
+    <Compile Include="Cipher\Rijndael.cs" />
+    <Compile Include="Cipher\RijndaelManaged.cs" />
+    <Compile Include="Cipher\RSA.cs" />
+    <Compile Include="Cipher\SymmetricAlgorithm.cs" />
+    <Compile Include="Cipher\TripleDES.cs" />
+    <Compile Include="Cipher\TripleDESCryptoServiceProvider.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="OpenPGP\Armor.cs" />
+    <Compile Include="OpenPGP\AsymSessionKeyPacket.cs" />
+    <Compile Include="OpenPGP\CipherHelper.cs" />
+    <Compile Include="OpenPGP\CompressedDataPacket.cs" />
+    <Compile Include="OpenPGP\EnumerationTypes.cs" />
+    <Compile Include="OpenPGP\LiteralDataPacket.cs" />
+    <Compile Include="OpenPGP\Messages\CertifiedPublicSubkey.cs" />
+    <Compile Include="OpenPGP\Messages\CertifiedUserID.cs" />
+    <Compile Include="OpenPGP\Messages\CompressedMessage.cs" />
+    <Compile Include="OpenPGP\Messages\EncryptedMessage.cs" />
+    <Compile Include="OpenPGP\Messages\ESKSequence.cs" />
+    <Compile Include="OpenPGP\Messages\LiteralMessage.cs" />
+    <Compile Include="OpenPGP\Messages\Message.cs" />
+    <Compile Include="OpenPGP\Messages\SignedMessage.cs" />
+    <Compile Include="OpenPGP\Messages\TransportablePublicKey.cs" />
+    <Compile Include="OpenPGP\Messages\TransportableSecretKey.cs" />
+    <Compile Include="OpenPGP\OnePassSignaturePacket.cs" />
+    <Compile Include="OpenPGP\Packet.cs" />
+    <Compile Include="OpenPGP\PublicKeyPacket.cs" />
+    <Compile Include="OpenPGP\Radix64.cs" />
+    <Compile Include="OpenPGP\SecretKeyPacket.cs" />
+    <Compile Include="OpenPGP\SignaturePacket.cs" />
+    <Compile Include="OpenPGP\SignatureSubPacket.cs" />
+    <Compile Include="OpenPGP\String2KeySpecifier.cs" />
+    <Compile Include="OpenPGP\SymmetricallyEncryptedDataPacket.cs" />
+    <Compile Include="OpenPGP\SymSessionKeyPacket.cs" />
+    <Compile Include="OpenPGP\UserIDPacket.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicKeyRing.cs" />
+    <Compile Include="SecretKeyRing.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
